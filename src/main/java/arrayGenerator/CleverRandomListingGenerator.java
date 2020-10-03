@@ -13,13 +13,13 @@ public class CleverRandomListingGenerator extends RandomListingGenerator {
 
     @Override
     protected void randomise() {
-        int[] newArray = new int[getArray().length]; // creating array to store values
+        //int[] newArray = new int[getArray().length]; // creating array to store values
         int randomIndex = getRandomIndex(); //getRandomIndex method taken from super class RandomListingGenerator random index is random value taken from array
-        for (int i = 0; i < newArray.length; i++) // iterating while obtaining non-repetitive values for array
+        for (int i = 0; i < getArray().length; i++) // iterating while obtaining non-repetitive values for array
         {
-            int randomValue = newArray[randomIndex]; //fisher yates algorithm
-            newArray[randomIndex] = newArray[i];
-            newArray[i] = randomValue;
+            int randomValue = getArray()[randomIndex]; //fisher yates algorithm
+            getArray()[randomIndex] = getArray()[i];
+            getArray()[i] = randomValue;
         }
     }
     }
